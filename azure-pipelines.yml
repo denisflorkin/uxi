@@ -3,6 +3,8 @@
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
+#foobar
+
 pool:
   vmImage: 'Ubuntu 16.04'
 
@@ -10,9 +12,18 @@ steps:
 - task: NodeTool@0
   inputs:
     versionSpec: '8.x'
-  displayName: 'Install Node.js'
+  displayName: 'respect my authoritah! Install Node.js'
 
 - script: |
     npm install
-    npm run build
-  displayName: 'npm install and build'
+    # IS THIS STILL VALID?
+    # npm dedupe # because reasons, without that zopfli(jest>request) fails and all goes to hell
+  displayName: 'Install node modules'
+
+- script: |
+    npm run test
+  displayName: 'Run Tests'
+
+- script: |
+    npm run pack
+  displayName: 'Pack for npmjs registry publish'
