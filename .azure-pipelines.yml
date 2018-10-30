@@ -16,5 +16,14 @@ steps:
 
 - script: |
     npm install
+    # IS THIS STILL VALID?
+    # npm dedupe # because reasons, without that zopfli(jest>request) fails and all goes to hell
+  displayName: 'Install node modules'
+
+- script: |
+    npm run test
+  displayName: 'Run Tests'
+
+- script: |
     npm run build
-  displayName: 'npm install and build'
+  displayName: 'Build'
