@@ -25,5 +25,5 @@ steps:
   displayName: 'Run Tests'
 
 - script: |
-    npm run build
-  displayName: 'Build'
+    npm run pack
+  displayName: 'Pack for npmjs registry publish'
