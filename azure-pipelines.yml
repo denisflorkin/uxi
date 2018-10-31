@@ -62,7 +62,7 @@ steps:
 
 - script: |
     npm run test
-  displayName: 'Run Tests'
+  displayName: 'Run unit Tests'
 
 # patch version before packing, if this is on master artifact will already
 # have the correct (next) version number to deploy to npmjs/release on git
@@ -73,7 +73,11 @@ steps:
 # test packing
 - script: |
     npm run pack
-  displayName: 'Pack for npmjs registry publish'
+  displayName: 'Run packing for test purp.'
+
+- script: |
+    rm -rf node_modules
+  displayName: 'rm node module before saving artifact.'
 
 
 # - task: CopyFiles@2
