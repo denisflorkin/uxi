@@ -7,6 +7,8 @@
 
 
 
+
+
 # some comment goes here
 
 # and another one
@@ -39,6 +41,7 @@ steps:
 - script: |
     echo $CICIMAINTAINER_NAME
   displayName: 'test env var'
+
 
 - script: |
       git config --global user.name $CICIMAINTAINER_NAME
