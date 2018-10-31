@@ -38,8 +38,15 @@ steps:
   displayName: 'git log'
 
 - script: |
-      git config --global user.name $CICIMAINTAINER_NAME
+    git config --global user.email
+  displayName: 'git user.email'
+
+- script: |
       git config --global user.email $CICIMAINTAINER_EMAIL
+  displayName: 'git email and name to sign version patch commit'
+
+- script: |
+      git config --global user.name $CICIMAINTAINER_NAME
   displayName: 'git email and name to sign version patch commit'
 
 
