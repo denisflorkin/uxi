@@ -36,6 +36,15 @@ steps:
     npm run test
   displayName: 'Run Tests'
 
+- script: |
+      git config --global user.name $CICIMAINTAINER_NAME
+      git config --global user.email $CICIMAINTAINER_EMAIL
+
+# patch version before packing, if this is on master artifact will already
+# have the correct (next) version number to deploy to npmjs/release on git
+- script: |
+    npm version patch -m "bump to v %s for release" ## creates the "tagged release commit" (git tag)
+  displayName: 'patch version for git/npmjs realease'
 
 # patch version before packing, if this is on master artifact will already
 # have the correct (next) version number to deploy to npmjs/release on git
