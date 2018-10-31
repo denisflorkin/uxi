@@ -46,6 +46,7 @@ steps:
     ls -al
   displayName: 'what is in here'
 
+
 # - task: CopyFiles@2
 #     displayName: 'Copy files into artifact location'
 #     inputs:
@@ -59,8 +60,8 @@ steps:
 - task: PublishBuildArtifacts@1
   displayName: 'Publish artifact'
   inputs:
-    # pathtoPublish: '$(Build.ArtifactStagingDirectory)/packed-uxi'
-    pathtoPublish: 'build'
+    pathtoPublish: '$(Build.ArtifactStagingDirectory)/packed-uxi'
+    # pathtoPublish: 'build'
     artifactName: 'packed-uxi'
     # publishLocation: 'Container' # Options: container, filePath
     #targetPath: # Required when publishLocation == FilePath
