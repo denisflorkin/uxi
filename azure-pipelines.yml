@@ -37,8 +37,13 @@ steps:
   displayName: 'Run Tests'
 
 - script: |
+    echo $CICIMAINTAINER_NAME
+  displayName: 'test env var'
+
+- script: |
       git config --global user.name $CICIMAINTAINER_NAME
       git config --global user.email $CICIMAINTAINER_EMAIL
+  displayName: 'git email and name to sign version patch commit'
 
 # patch version before packing, if this is on master artifact will already
 # have the correct (next) version number to deploy to npmjs/release on git
