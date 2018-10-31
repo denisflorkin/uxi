@@ -25,6 +25,11 @@ steps:
   displayName: 'Install Node.js'
 
 ## creds
+
+- script: |
+    git config user.email
+  displayName: 'git user.email'
+
 - script: |
     echo $CICIMAINTAINER_NAME
   displayName: 'test env var'
@@ -37,9 +42,6 @@ steps:
     git log -1
   displayName: 'git log'
 
-- script: |
-    git config --global user.email
-  displayName: 'git user.email'
 
 - script: |
       git config --global user.email $CICIMAINTAINER_EMAIL
