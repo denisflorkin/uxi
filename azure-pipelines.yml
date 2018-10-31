@@ -38,6 +38,14 @@ steps:
     npm run pack
   displayName: 'Pack for npmjs registry publish'
 
+- script: |
+    pwd
+  displayName: 'Whaere ios this hapenning'
+
+- script: |
+    ls -al
+  displayName: 'what is in here'
+
 # - task: CopyFiles@2
 #     displayName: 'Publish artifact'
 #     inputs:
