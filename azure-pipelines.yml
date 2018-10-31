@@ -37,3 +37,23 @@ steps:
 - script: |
     npm run pack
   displayName: 'Pack for npmjs registry publish'
+
+# - task: CopyFiles@2
+#     displayName: 'Publish artifact'
+#     inputs:
+#         SourceFolder: build
+#         Contents: 'DataStore*.dacpac'
+#         TargetFolder: '$(build.artifactstagingdirectory)/artifact'
+
+# Publish Build Artifacts
+# Publish build artifacts to Azure Artifacts/TFS or a file share
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish artifact'
+  inputs:
+    pathtoPublish: '$(Build.ArtifactStagingDirectory)/build'
+    artifactName: 'packed'
+    #publishLocation: 'Container' # Options: container, filePath
+    #targetPath: # Required when publishLocation == FilePath
+    #parallel: false # Optional
+    #parallelCount: # Optional
