@@ -40,6 +40,10 @@ steps:
     echo $CICIMAINTAINER_NAME
   displayName: 'test env var'
 
+- script: |
+    echo $($CICIMAINTAINER_NAME)
+  displayName: 'test env var 2'
+
 
 - script: |
       git config --global user.name $CICIMAINTAINER_NAME
