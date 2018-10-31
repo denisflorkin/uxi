@@ -26,30 +26,30 @@ steps:
 
 ## creds
 
-- script: |
-    git config user.email
-  displayName: 'git user.email'
+# - script: |
+#     git config user.email
+#   displayName: 'git user.email'
 
-- script: |
-    echo $CICIMAINTAINER_NAME
-  displayName: 'test env var'
+# - script: |
+#     echo $CICIMAINTAINER_NAME
+#   displayName: 'test env var'
 
-- script: |
-    echo $($CICIMAINTAINER_NAME)
-  displayName: 'test env var 2'
+# - script: |
+#     echo $($CICIMAINTAINER_NAME)
+#   displayName: 'test env var 2'
 
-- script: |
-    git log -1
-  displayName: 'git log'
+# - script: |
+#     git log -1
+#   displayName: 'git log'
 
 
-- script: |
-      git config --global user.email $CICIMAINTAINER_EMAIL
-  displayName: 'git email and name to sign version patch commit'
+# - script: |
+#       git config --global user.email $CICIMAINTAINER_EMAIL
+#   displayName: 'git email and name to sign version patch commit'
 
-- script: |
-      git config --global user.name $CICIMAINTAINER_NAME
-  displayName: 'git email and name to sign version patch commit'
+# - script: |
+#       git config --global user.name $CICIMAINTAINER_NAME
+#   displayName: 'git email and name to sign version patch commit'
 
 
 
@@ -66,11 +66,11 @@ steps:
 
 # patch version before packing, if this is on master artifact will already
 # have the correct (next) version number to deploy to npmjs/release on git
-- script: |
-    npm version patch -m "bump to v %s for release" ## creates the "tagged release commit" (git tag)
-  displayName: 'patch version for git/npmjs realease'
+# - script: |
+#     npm version patch -m "bump to v %s for release" ## creates the "tagged release commit" (git tag)
+#   displayName: 'patch version for git/npmjs realease'
 
-
+# test packing
 - script: |
     npm run pack
   displayName: 'Pack for npmjs registry publish'
