@@ -24,6 +24,25 @@ steps:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
 
+## creds
+- script: |
+    echo $CICIMAINTAINER_NAME
+  displayName: 'test env var'
+
+- script: |
+    echo $($CICIMAINTAINER_NAME)
+  displayName: 'test env var 2'
+
+- script: |
+    git log -1
+  displayName: 'git log'
+
+- script: |
+      git config --global user.name $CICIMAINTAINER_NAME
+      git config --global user.email $CICIMAINTAINER_EMAIL
+  displayName: 'git email and name to sign version patch commit'
+
+
 
 - script: |
     # npm install
@@ -35,20 +54,6 @@ steps:
 - script: |
     npm run test
   displayName: 'Run Tests'
-
-- script: |
-    echo $CICIMAINTAINER_NAME
-  displayName: 'test env var'
-
-- script: |
-    echo $($CICIMAINTAINER_NAME)
-  displayName: 'test env var 2'
-
-
-- script: |
-      git config --global user.name $CICIMAINTAINER_NAME
-      git config --global user.email $CICIMAINTAINER_EMAIL
-  displayName: 'git email and name to sign version patch commit'
 
 # patch version before packing, if this is on master artifact will already
 # have the correct (next) version number to deploy to npmjs/release on git
