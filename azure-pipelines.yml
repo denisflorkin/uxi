@@ -90,6 +90,7 @@ steps:
     npm version patch -m "bump to v %s for release" ## creates the "tagged release commit" (git tag)
   displayName: 'patch version for git/npmjs realease'
 
+
 # test packing
 - script: |
     npm run pack
