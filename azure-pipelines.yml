@@ -101,6 +101,10 @@ steps:
     rm -rf node_modules
   displayName: 'rm node module before saving artifact.'
 
+- script: |
+    git status
+  displayName: 'git status.'
+
 
 
 
