@@ -46,17 +46,17 @@ steps:
     cat ~/.gitconfig
   displayName: 'system user git config'
 
-- script: |
-    cat /etc/gitconfig
-  displayName: 'system git config'
+# - script: |
+#     cat /etc/gitconfig
+#   displayName: 'system git config'
 
 - script: |
     git config user.email
   displayName: 'git user.email'
 
-# - script: |
-#     echo $CICIMAINTAINER_NAME
-#   displayName: 'test env var'
+- script: |
+    echo $CICIMAINTAINER_NAME
+  displayName: 'test env var'
 
 # - script: |
 #     echo $($CICIMAINTAINER_NAME)
@@ -90,9 +90,9 @@ steps:
 
 # patch version before packing, if this is on master artifact will already
 # have the correct (next) version number to deploy to npmjs/release on git
-# - script: |
-#     npm version patch -m "bump to v %s for release" ## creates the "tagged release commit" (git tag)
-#   displayName: 'patch version for git/npmjs realease'
+- script: |
+    npm version patch -m "bump to v %s for release" ## creates the "tagged release commit" (git tag)
+  displayName: 'patch version for git/npmjs realease'
 
 # test packing
 - script: |
