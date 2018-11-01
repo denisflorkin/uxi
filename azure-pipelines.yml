@@ -30,12 +30,12 @@ steps:
 #   displayName: 'project git config'
 
 
-# - script: |
-#     touch ~/.gitconfig
-#     echo '[user]' >> ~/.gitconfig
-#     echo '    name = Denis Florkin' >> ~/.gitconfig
-#     echo '    email = denisflorkin@gmail.com' >> ~/.gitconfig
-#   displayName: 'write git configo to file'
+- script: |
+    touch ~/.gitconfig
+    echo '[user]' >> ~/.gitconfig
+    echo '    name = Denis Florkin' >> ~/.gitconfig
+    echo '    email = denisflorkin@gmail.com' >> ~/.gitconfig
+  displayName: 'write git configo to file'
 
 
 # - script: |
