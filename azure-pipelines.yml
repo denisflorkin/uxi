@@ -29,9 +29,21 @@ steps:
 
 ## creds
 
-# - script: |
-#     git config user.email
-#   displayName: 'git user.email'
+- script: |
+    cat .git/config
+  displayName: 'project git config'
+
+- script: |
+    cat ~/.gitconfig
+  displayName: 'system user git config'
+
+- script: |
+    cat /etc/gitconfig
+  displayName: 'system git config'
+
+- script: |
+    git config user.email
+  displayName: 'git user.email'
 
 # - script: |
 #     echo $CICIMAINTAINER_NAME
