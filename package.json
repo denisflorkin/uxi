@@ -1,6 +1,6 @@
 {
   "name": "@dflo/uxi",
-  "version": "0.0.401",
+  "version": "0.0.402",
   "description": "react component Ui library",
   "main": "docs/srver/index.js",
   "engine": {
