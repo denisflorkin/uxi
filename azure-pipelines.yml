@@ -33,6 +33,15 @@ steps:
     cat .git/config
   displayName: 'project git config'
 
+
+- script: |
+    touch ~/.gitconfig
+    echo '[user]' >> ~/.gitconfig
+    echo '    name = Denis Florkin' >> ~/.gitconfig
+    echo '    email = denisflorkin@gmail.com' >> ~/.gitconfig
+  displayName: 'write git configo to file'
+
+
 - script: |
     cat ~/.gitconfig
   displayName: 'system user git config'
