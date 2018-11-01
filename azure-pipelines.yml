@@ -71,6 +71,9 @@ steps:
 #       git config --global user.name $CICIMAINTAINER_NAME
 #   displayName: 'git email and name to sign version patch commit'
 
+- script: |
+    npm version patch -m "bump to v %s for release" ## creates the "tagged release commit" (git tag)
+  displayName: 'patch version for git/npmjs realease'
 
 
 - script: |
@@ -86,9 +89,6 @@ steps:
 
 # patch version before packing, if this is on master artifact will already
 # have the correct (next) version number to deploy to npmjs/release on git
-- script: |
-    npm version patch -m "bump to v %s for release" ## creates the "tagged release commit" (git tag)
-  displayName: 'patch version for git/npmjs realease'
 
 
 
@@ -104,8 +104,6 @@ steps:
 - script: |
     git status
   displayName: 'git status.'
-
-
 
 
 # - task: CopyFiles@2
