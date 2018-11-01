@@ -29,34 +29,34 @@ steps:
 
 ## creds
 
-- script: |
-    cat .git/config
-  displayName: 'project git config'
+# - script: |
+#     cat .git/config
+#   displayName: 'project git config'
 
 
-- script: |
-    touch ~/.gitconfig
-    echo '[user]' >> ~/.gitconfig
-    echo '    name = Denis Florkin' >> ~/.gitconfig
-    echo '    email = denisflorkin@gmail.com' >> ~/.gitconfig
-  displayName: 'write git configo to file'
+# - script: |
+#     touch ~/.gitconfig
+#     echo '[user]' >> ~/.gitconfig
+#     echo '    name = Denis Florkin' >> ~/.gitconfig
+#     echo '    email = denisflorkin@gmail.com' >> ~/.gitconfig
+#   displayName: 'write git configo to file'
 
 
-- script: |
-    cat ~/.gitconfig
-  displayName: 'system user git config'
+# - script: |
+#     cat ~/.gitconfig
+#   displayName: 'system user git config'
 
 # - script: |
 #     cat /etc/gitconfig
 #   displayName: 'system git config'
 
-- script: |
-    git config user.email
-  displayName: 'git user.email'
+# - script: |
+#     git config user.email
+#   displayName: 'git user.email'
 
-- script: |
-    echo $CICIMAINTAINER_NAME
-  displayName: 'test env var'
+# - script: |
+#     echo $CICIMAINTAINER_NAME
+#   displayName: 'test env var'
 
 # - script: |
 #     echo $($CICIMAINTAINER_NAME)
