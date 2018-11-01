@@ -71,8 +71,6 @@ steps:
 
 
 
-
-
 # - script: |
 #       git config --global user.name $CICIMAINTAINER_NAME
 #   displayName: 'git email and name to sign version patch commit'
